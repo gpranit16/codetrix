@@ -5,6 +5,7 @@ import {
   StyleSheet,
   BackHandler,
   Modal,
+  Platform,
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
@@ -13,6 +14,8 @@ import { LoginScreen } from './src/screens/LoginScreen';
 import { DashboardScreen } from './src/screens/DashboardScreen';
 import { AddLoanScreen } from './src/screens/AddLoanScreen';
 import { colors } from './src/theme/colors';
+
+const isWeb = Platform.OS === 'web';
 
 const MainNavigator: React.FC = () => {
   const { isAuthenticated, isLoading } = useAuth();
@@ -87,14 +90,35 @@ const MainNavigator: React.FC = () => {
 export default function App() {
   return (
     <SafeAreaProvider>
-      <AuthProvider>
-        <MainNavigator />
-      </AuthProvider>
+      <View style={styles.webOuterContainer}>
+        <View style={styles.webPhoneFrame}>
+          <AuthProvider>
+            <MainNavigator />
+          </AuthProvider>
+        </View>
+      </View>
     </SafeAreaProvider>
   );
 }
 
 const styles = StyleSheet.create({
+  webOuterContainer: {
+    flex: 1,
+    backgroundColor: isWeb ? '#05070D' : colors.background,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    height: isWeb ? ('100vh' as unknown as number) : '100%',
+  },
+  webPhoneFrame: {
+    flex: 1,
+    width: '100%',
+    maxWidth: 480,
+    backgroundColor: colors.background,
+    overflow: 'hidden',
+    borderWidth: isWeb ? 1 : 0,
+    borderColor: '#1E293B',
+  },
   safeArea: {
     flex: 1,
     backgroundColor: colors.background,

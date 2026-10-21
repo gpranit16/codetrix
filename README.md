@@ -225,9 +225,12 @@ npm run dev:mobile
 
 ## 🎥 Screen Recording & Demo
 
-A complete 2–3 minute video demonstrating the application end-to-end (Mock OTP login, Dashboard summary, adding a loan, overdue highlighting, and repayment settlement) is documented in [docs/demo-script.md](docs/demo-script.md).
+A complete demo recording demonstrating the application end-to-end (Mock OTP login, Dashboard summary, adding a loan, overdue highlighting, and repayment settlement) is saved at:
+👉 **[`docs/miniledger-demo-walkthrough.webp`](docs/miniledger-demo-walkthrough.webp)**
 
-- **Demo Video Link**: [Upload your Loom / Google Drive link here after recording]
+The detailed video timeline and narration script is documented in [docs/demo-script.md](docs/demo-script.md).
+
+- **Demo Video File**: [docs/miniledger-demo-walkthrough.webp](docs/miniledger-demo-walkthrough.webp) (Ready to preview in browser or upload to Google Drive / Loom)
 
 ---
 

@@ -24,14 +24,6 @@
     "web": {
       "favicon": "./assets/favicon.png",
       "bundler": "metro"
-    },
-    "plugins": [
-      [
-        "expo-image-picker",
-        {
-          "photosPermission": "Allow MiniLedger to access your photos to attach payment receipts."
-        }
-      ]
-    ]
+    }
   }
 }

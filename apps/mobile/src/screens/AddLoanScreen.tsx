@@ -12,7 +12,7 @@ import {
   Image,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import * as ImagePicker from 'expo-image-picker';
+import { pickImageAsync } from '../utils/imagePicker';
 import { colors } from '../theme/colors';
 import { api, ApiError } from '../api/client';
 import { formatDate } from '../utils/format';
@@ -46,24 +46,9 @@ export const AddLoanScreen: React.FC<AddLoanScreenProps> = ({ onClose, onSuccess
   };
 
   const pickReceiptImage = async () => {
-    try {
-      const permission = await ImagePicker.requestMediaLibraryPermissionsAsync();
-      if (!permission.granted) {
-        alert('Permission to access photos is needed to attach a receipt.');
-        return;
-      }
-
-      const result = await ImagePicker.launchImageLibraryAsync({
-        mediaTypes: ImagePicker.MediaTypeOptions.Images,
-        allowsEditing: true,
-        quality: 0.8,
-      });
-
-      if (!result.canceled && result.assets[0]) {
-        setReceiptImage(result.assets[0].uri);
-      }
-    } catch {
-      alert('Unable to select photo');
+    const uri = await pickImageAsync();
+    if (uri) {
+      setReceiptImage(uri);
     }
   };
 
