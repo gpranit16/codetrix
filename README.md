@@ -54,7 +54,7 @@ miniledger/
 │       ├── services/        # AuthService, LoanService, SummaryService
 │       ├── utils/           # Logger (OTP console banner), crypto OTP, JWT
 │       └── __tests__/       # Vitest integration tests (19 test cases)
-├── docs/                    # Technical architecture, API reference, demo script
+├── docs/                    # Technical architecture, API reference, screenshots
 ├── .gitignore
 ├── .env.example
 ├── package.json             # Root monorepo workspace scripts
@@ -221,13 +221,18 @@ npm run dev:mobile
     ✓ GET /api/summary updates totalRepaid and resets overdueAmount to ₹0
 ```
 
+## 📱 App Screenshots
+
+| 1. Phone Login & Mock OTP | 2. Financial Dashboard & Overdue | 3. Add Loan Entry |
+|:---:|:---:|:---:|
+| <img src="docs/screenshots/01-login-screen.png" width="260" alt="Login Screen" /> | <img src="docs/screenshots/02-dashboard-screen.png" width="260" alt="Dashboard Screen" /> | <img src="docs/screenshots/03-add-loan-modal.png" width="260" alt="Add Loan Screen" /> |
+
 ---
 
 ## 🎥 Screen Recording & Demo
 
-- 🔗 **Google Drive Demo Link**: [**Watch MiniLedger Walkthrough Video**](https://drive.google.com/file/d/1Z02LXTgqkRr50cc9pBV1AUJi748S8fKg/view?usp=sharing)
+- 🔗 **Google Drive Demo Video**: [**Watch MiniLedger Walkthrough Video (2–3 Mins)**](https://drive.google.com/file/d/1Z02LXTgqkRr50cc9pBV1AUJi748S8fKg/view?usp=sharing)
 - 📁 **Repository Video File**: [`docs/miniledger-demo-walkthrough.webp`](docs/miniledger-demo-walkthrough.webp)
-- 📝 **Detailed Script & Timeline**: [docs/demo-script.md](docs/demo-script.md)
 
 ---
 

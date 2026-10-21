@@ -26,5 +26,8 @@
     "prisma"
   ],
   "author": "MiniLedger Team",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "puppeteer-core": "^25.15.0"
+  }
 }
