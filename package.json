@@ -1,0 +1,30 @@
+{
+  "name": "miniledger-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MiniLedger - Track money lent to friends, due dates, and repayments",
+  "workspaces": [
+    "server",
+    "apps/mobile"
+  ],
+  "scripts": {
+    "dev:server": "npm --prefix server run dev",
+    "dev:mobile": "npm --prefix apps/mobile start",
+    "build:server": "npm --prefix server run build",
+    "test:server": "npm --prefix server run test",
+    "db:migrate": "npm --prefix server run db:migrate",
+    "db:seed": "npm --prefix server run db:seed",
+    "db:studio": "npm --prefix server run db:studio"
+  },
+  "keywords": [
+    "miniledger",
+    "react-native",
+    "expo",
+    "express",
+    "typescript",
+    "postgresql",
+    "prisma"
+  ],
+  "author": "MiniLedger Team",
+  "license": "MIT"
+}

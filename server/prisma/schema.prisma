@@ -1,0 +1,60 @@
+// Prisma Schema for MiniLedger
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String   @id @default(uuid())
+  phoneNumber String   @unique @map("phone_number")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  loans Loan[]
+
+  @@map("users")
+}
+
+model OtpChallenge {
+  id          String   @id @default(uuid())
+  phoneNumber String   @map("phone_number")
+  hashedOtp   String   @map("hashed_otp")
+  attempts    Int      @default(0)
+  verified    Boolean  @default(false)
+  expiresAt   DateTime @map("expires_at")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@index([phoneNumber, createdAt])
+  @@map("otp_challenges")
+}
+
+enum LoanStatus {
+  PENDING
+  REPAID
+}
+
+model Loan {
+  id          String     @id @default(uuid())
+  userId      String     @map("user_id")
+  friendName  String     @map("friend_name")
+  amount      Decimal    @db.Decimal(12, 2)
+  dueDate     DateTime   @map("due_date")
+  status      LoanStatus @default(PENDING)
+  repaidAt    DateTime?  @map("repaid_at")
+  receiptUrl  String?    @map("receipt_url")
+  notes       String?
+  createdAt   DateTime   @default(now()) @map("created_at")
+  updatedAt   DateTime   @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([userId, status])
+  @@index([userId, dueDate])
+  @@map("loans")
+}
