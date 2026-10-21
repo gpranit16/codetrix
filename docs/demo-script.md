@@ -45,6 +45,6 @@ This script provides a structured guide for recording the 2–3 minute submissio
    - Tap `+ Add Loan` -> Create a loan for "Rohan" (₹2000).
    - Tap "Mark as Repaid" on Priya Patel's overdue loan.
    - Observe the Overdue card dropping to ₹0 and Total Repaid increasing.
-4. **Upload**:
-   - Save the recording or copy the Loom / Google Drive link.
-   - Paste into the submission notes.
+4. **Upload & Submission**:
+   - 🔗 **Google Drive Link**: [https://drive.google.com/file/d/1Z02LXTgqkRr50cc9pBV1AUJi748S8fKg/view?usp=sharing](https://drive.google.com/file/d/1Z02LXTgqkRr50cc9pBV1AUJi748S8fKg/view?usp=sharing)
+   - 📁 **Local Artifact**: `docs/miniledger-demo-walkthrough.webp`
